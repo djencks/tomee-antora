@@ -1,0 +1,68 @@
+site:
+  title: Tomee Documentation
+  url: https://tomee-preview.s3-us-west-2.amazonaws.com
+  start_page: tomee:ROOT:docs.adoc
+content:
+  sources:
+# I have been working against a branch off of master branch. Would branching off develop be more appropriate?
+#  - url: ./../
+#    start_path: docs/tomee
+#    branches: HEAD
+
+# This uses the local copy. I think you need to explicity set up local branches for these, tracking the remotes.
+#- url: ./../
+# This uses the remote git.
+  - url:  https://github.com/djencks/tomee.git
+    start_path: docs/tomee
+    branches: [antora, antora-tomee-7.1.x, antora-tomee-7.0.x]
+
+# currently producing master@common
+#  - url: ./../../tomee-site-generator
+  - url: https://github.com/djencks/tomee-site-generator.git
+    start_path: tomee
+    branches: antora
+
+# currently producing master@common
+#  - url: ./../../tomee-site
+  - url: https://github.com/djencks/tomee-site.git
+    start_path: tomee
+    branches: antora
+
+# The .adoc files for the examples are not checked in; they are copied and renamed from ../examples.
+# Checking the copies in would make building the site much more self contained.
+# You need to run update-examples.sh to generate the copy scripts and nav files and show you if there are new or removed pages.
+#  - url: https://github.com/djencks/tomee.git
+#    start_path: docs/examples-en
+#    branches: antora
+#
+#  - url: https://github.com/djencks/tomee.git
+#    start_path: docs/examples-es
+#    branches: antora
+#
+#  - url: https://github.com/djencks/tomee.git
+#    start_path: docs/examples-pt
+#    branches: antora
+
+asciidoc:
+  attributes:
+    common-vc: master@common
+    examples-vc: 8.0@examples
+    tomee-latest-vc: 8.0@tomee
+    supported-properties-table-layout: cols="2,1,3,5a",options="header"
+    properties-table-layout: cols="3a,2a,5a",options="header"
+    name-description-table-layout: cols="2,7a",options="header"
+    tested-on-layout: cols="7*",options="header"
+    icons: font
+    y: icon:check[role="green"]
+    n: icon:times[role="red"]
+    c: icon:file-text-o[role="blue"]
+
+# This is the Antora default UI.
+# We need to modify it with supplemental files or replace it.
+ui:
+  bundle:
+    url: "./node_modules/@tomee/tomee-antora-ui/build/tomee-antora-ui-bundle.zip"
+#    snapshot: true
+
+output:
+  clean: true
