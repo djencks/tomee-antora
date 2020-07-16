@@ -1,5 +1,5 @@
 site:
-  title: Tomee Documentation
+  title: Apache TomEE
   url: https://tomee-preview.s3-us-west-2.amazonaws.com
   start_page: tomee:ROOT:docs.adoc
 content:
