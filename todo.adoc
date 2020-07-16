@@ -1,4 +1,7 @@
 = TODO for playbook and content
+:done: &#x2713;
+
+// Mark items with {done} when complete
 
 == Playbook
 
@@ -6,9 +9,17 @@
 
 This probably involves an "author" playbook with at least one file system source url, together with instructions on how to arrange a set of workspaces.
 
+=== Set up maven build.
+
+The camel-website project might provide inspiration.
+
 == Content
 
 === Determine if 'common' component should be rendered by Antora
+
+==== Prototype start page as asciidoc/Antora.
+
+It will need another layout, and some special css.
 
 === Provide thought-out nav files for all content
 
