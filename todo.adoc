@@ -1,0 +1,20 @@
+= TODO for playbook and content
+
+== Playbook
+
+=== Make it easy to work locally
+
+This probably involves an "author" playbook with at least one file system source url, together with instructions on how to arrange a set of workspaces.
+
+== Content
+
+=== Determine if 'common' component should be rendered by Antora
+
+=== Provide thought-out nav files for all content
+
+=== Organize content in modules or topics by subject area
+
+=== Examine the adoc files that, in the current site, are generated and determine if this is appropriate in an Antora site.
+
+=== Consider if ventilated prose should be a TomEE documentation standard.
+
