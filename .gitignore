@@ -1,5 +1,6 @@
 /build/
 .cache
 .idea
+node
 node_modules
 package-lock.json

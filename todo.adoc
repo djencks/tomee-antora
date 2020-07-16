@@ -9,9 +9,11 @@
 
 This probably involves an "author" playbook with at least one file system source url, together with instructions on how to arrange a set of workspaces.
 
-=== Set up maven build.
+=== {done} Set up maven build.
 
 The camel-website project might provide inspiration.
+
+=== Determine how this can relate to other parts of the site build.
 
 == Content
 
