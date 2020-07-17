@@ -1,7 +1,7 @@
 = TODO for playbook and content
 :done: &#x2713;
-
 // Mark items with {done} when complete
+:toc: auto
 
 == Playbook
 
@@ -31,3 +31,4 @@ It will need another layout, and some special css.
 
 === Consider if ventilated prose should be a TomEE documentation standard.
 
+=== Update content to actual TomEE git repos.
