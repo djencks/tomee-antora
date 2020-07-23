@@ -1,7 +1,7 @@
 site:
   title: Apache TomEE
   url: https://tomee-preview.s3-us-west-2.amazonaws.com
-  start_page: tomee:ROOT:docs.adoc
+  start_page: master@common:ROOT:home-page.adoc
 content:
   sources:
 # I have been working against a branch off of master branch. Would branching off develop be more appropriate?
@@ -20,7 +20,7 @@ content:
 #  - url: ./../../tomee-site-generator
   - url: https://github.com/djencks/tomee-site-generator.git
     start_path: tomee
-    branches: antora
+    branches: home-page
 
 # currently producing master@common
 #  - url: ./../../tomee-site
@@ -57,6 +57,8 @@ asciidoc:
     y: icon:check[role="green"]
     n: icon:times[role="red"]
     c: icon:file-text-o[role="blue"]
+  extensions:
+    '@djencks/asciidoctor-openblock'
 
 # This is the Antora default UI.
 # We need to modify it with supplemental files or replace it.
