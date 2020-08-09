@@ -2,31 +2,34 @@ site:
   title: Apache TomEE
   url: https://tomee-preview.s3-us-west-2.amazonaws.com
   start_page: master@common:ROOT:home-page.adoc
+
 content:
   sources:
-# I have been working against a branch off of master branch. Would branching off develop be more appropriate?
-#  - url: ./../
-#    start_path: docs/tomee
-#    branches: HEAD
-
 # This uses the local copy. I think you need to explicity set up local branches for these, tracking the remotes.
-#- url: ./../
+#  - url: ./../tomee
 # This uses the remote git.
   - url:  https://github.com/djencks/tomee.git
     start_path: docs/tomee
-    branches: [antora, antora-tomee-7.1.x, antora-tomee-7.0.x]
+    branches:
+# this branch only exists for docs, so ee-prefix can appear as jakarta
+      - antora-tomee-9.x-docs
+#      - HEAD
+      - antora
+      - antora-tomee-7.1.x
+      - antora-tomee-7.0.x
 
 # currently producing master@common
-#  - url: ./../../tomee-site-generator
+#  - url: ./../tomee-site-generator
   - url: https://github.com/djencks/tomee-site-generator.git
     start_path: tomee
     branches: home-page
 
 # currently producing master@common
-#  - url: ./../../tomee-site
+#  - url: ./../tomee-site
   - url: https://github.com/djencks/tomee-site.git
     start_path: tomee
     branches: antora
+#    branches: HEAD
 
 # The .adoc files for the examples are not checked in; they are copied and renamed from ../examples.
 # Checking the copies in would make building the site much more self contained.
@@ -57,8 +60,10 @@ asciidoc:
     y: icon:check[role="green"]
     n: icon:times[role="red"]
     c: icon:file-text-o[role="blue"]
+    ee-prefix@: javax
   extensions:
-    '@djencks/asciidoctor-openblock'
+    - '@djencks/asciidoctor-antora-indexer'
+    - '@djencks/asciidoctor-openblock'
 
 # This is the Antora default UI.
 # We need to modify it with supplemental files or replace it.
